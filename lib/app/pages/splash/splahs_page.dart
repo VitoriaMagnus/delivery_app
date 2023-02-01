@@ -1,5 +1,6 @@
 import 'package:delivery_app/app/core/ui/styles/app_styles.dart';
 import 'package:delivery_app/app/core/ui/styles/colors_app.dart';
+import 'package:delivery_app/app/core/widgets/delivery_button.dart';
 import 'package:flutter/material.dart';
 
 class SplashPage extends StatelessWidget {
@@ -14,7 +15,10 @@ class SplashPage extends StatelessWidget {
       body: Column(
         children: [
           Container(),
-          ElevatedButton(onPressed: () {}, child: const Text('Teste')),
+          DeliveryButton(
+            label: 'Teste',
+            onPressed: () {},
+          ),
           TextFormField(),
         ],
       ),
