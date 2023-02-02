@@ -24,7 +24,7 @@ class DeliveryProductTile extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.only(bottom: 8.0),
                   child: Text(
-                    product.nome,
+                    product.name,
                     style:
                         context.textStyles.textExtraBold.copyWith(fontSize: 16),
                   ),
