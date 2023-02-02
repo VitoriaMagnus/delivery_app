@@ -34,10 +34,13 @@ class SplashPage extends StatelessWidget {
                   Image.asset('assets/images/logo.png'),
                   const SizedBox(height: 80),
                   DeliveryButton(
-                      width: context.percentWidth(.6),
-                      height: 35,
-                      label: 'ACESSAR',
-                      onPressed: () {}),
+                    width: context.percentWidth(.6),
+                    height: 35,
+                    label: 'ACESSAR',
+                    onPressed: () {
+                      Navigator.of(context).pushNamed('/home');
+                    },
+                  ),
                 ],
               ),
             ),
