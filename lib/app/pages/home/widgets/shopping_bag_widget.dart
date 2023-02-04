@@ -3,10 +3,23 @@ import 'package:delivery_app/app/core/ui/helpers/size_extensions.dart';
 import 'package:delivery_app/app/core/ui/styles/text_styles.dart';
 import 'package:delivery_app/app/dto/order_product_dto.dart';
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class ShoppingBagWidget extends StatelessWidget {
   final List<OrderProductDto> bag;
+
   const ShoppingBagWidget({super.key, required this.bag});
+
+  Future<void> _goOrder(BuildContext context) async {
+    final navigator = Navigator.of(context);
+    final sp = await SharedPreferences.getInstance();
+    if (!sp.containsKey('accessToken')) {
+      //Envio para o login
+      final loginResult = await navigator.pushNamed('/auth/login');
+    }
+
+    //Envio para o order
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +45,9 @@ class ShoppingBagWidget extends StatelessWidget {
         ),
       ),
       child: ElevatedButton(
-        onPressed: () {},
+        onPressed: () {
+          _goOrder(context);
+        },
         child: Stack(
           children: [
             const Align(
